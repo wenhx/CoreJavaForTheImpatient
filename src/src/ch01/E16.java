@@ -1,7 +1,7 @@
 package ch01;
 
 public class E16 {
-    public static void Run() {
+    public static void run() {
         System.out.println(average(1, 2, 3, 4, 5, 6));
     }
 

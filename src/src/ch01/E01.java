@@ -3,7 +3,7 @@ package ch01;
 import java.util.Scanner;
 
 public class E01 {
-    public static void Run() {
+    public static void run() {
         System.out.println("Chapter 1 exercise 1.");
         System.out.print("Please input a number: ");
         Scanner scanner = new Scanner(System.in);

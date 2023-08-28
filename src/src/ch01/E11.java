@@ -3,7 +3,7 @@ package ch01;
 import java.util.Scanner;
 
 public class E11 {
-    public static void Run() {
+    public static void run() {
         System.out.print("Input some words: ");
         Scanner scanner = new Scanner(System.in);
         char[] inputs = scanner.nextLine().toCharArray();

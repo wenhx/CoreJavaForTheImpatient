@@ -4,7 +4,7 @@ import java.util.Scanner;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class E10 {
-    public static void Run() {
+    public static void run() {
         ThreadLocalRandom random = ThreadLocalRandom.current();
         char[] seeds = "0123456789abcdefghijklmnopqrstuvwxyz".toCharArray();
         StringBuilder sb = new StringBuilder();

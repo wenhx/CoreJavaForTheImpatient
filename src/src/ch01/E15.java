@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class E15 {
-    public static void Run() {
+    public static void run() {
         System.out.print("Input a number: ");
         Scanner scanner = new Scanner(System.in);
         int n = scanner.nextInt();

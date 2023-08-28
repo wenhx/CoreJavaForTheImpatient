@@ -4,7 +4,7 @@ import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class E05 {
-    public static void Run() {
+    public static void run() {
         int maxInt = Integer.MAX_VALUE;
         ThreadLocalRandom random = ThreadLocalRandom.current();
         int randomInt = random.nextInt(Integer.MAX_VALUE);

@@ -3,7 +3,7 @@ package ch01;
 import java.util.Scanner;
 
 public class E07 {
-    public static void Run() {
+    public static void run() {
         System.out.printf("The max value of short is %d%n", Short.MAX_VALUE);
         System.out.printf("The next of Short.MAX_VALUE is %d", (short)(Short.MAX_VALUE + 1));
         System.out.println();

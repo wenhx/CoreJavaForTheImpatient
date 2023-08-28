@@ -1,7 +1,7 @@
 package ch01;
 
 public class E04 {
-    public static void Run() {
+    public static void run() {
         System.out.println("Chapter 1 exercise 4.");
         double result1 = Math.nextDown(Double.POSITIVE_INFINITY);
         System.out.printf("The largest positive integer value in type double is: %g", result1);

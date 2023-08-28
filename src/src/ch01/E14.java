@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class E14 {
-    public static void Run() {
+    public static void run() {
         ArrayList<int[]> list = new ArrayList<>();
         System.out.println("Please input numbers separated by spaces. End with blank line.");
 

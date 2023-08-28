@@ -3,7 +3,7 @@ package ch01;
 import java.util.Scanner;
 
 public class E03 {
-    public static void Run() {
+    public static void run() {
         System.out.println("Chapter 1 exercise 3.");
         System.out.print("Please input 3 numbers separated by spaces: ");
         Scanner scanner = new Scanner(System.in);

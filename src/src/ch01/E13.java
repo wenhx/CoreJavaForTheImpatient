@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class E13 {
-    public static void Run() {
+    public static void run() {
         ThreadLocalRandom random = ThreadLocalRandom.current();
         for (int n = 0; n < 5; n++) {
             int[] numbers = new int[6];
