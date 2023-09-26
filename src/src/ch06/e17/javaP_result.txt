@@ -1,0 +1,5 @@
+public class ch06.e17.Employee implements java.lang.Comparable<ch06.e17.Employee> {
+  public ch06.e17.Employee();
+  public int compareTo(ch06.e17.Employee);
+  public int compareTo(java.lang.Object);
+}
