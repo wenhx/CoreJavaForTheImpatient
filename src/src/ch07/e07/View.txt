@@ -1,0 +1,76 @@
+7.6 Views
+A collection view is a lightweight object that implements a collection interface, but doesn’t
+store elements. For example, the keySet and values methods of a map yield views
+into the map.
+Another example is the Arrays.asList method. If a is an array of type E[], then
+Arrays.asList(a) returns a List<T> that is backed by the array elements.
+Usually, a view does not support all operations of its interface. For example, it makes no
+sense to call add on a key set of a map or the list returned by Arrays.asList.
+In the following sections, you will see some views that are provided by the Java
+collections framework.
+7.6.1 Ranges
+You can form a sublist view of a list. For example,
+Click here to view code image
+List<String> sentence = …;
+List<String> nextFive = sentence.subList(5, 10);
+This view accesses the elements with index 5 through 9. Any mutations of the sublist
+(such as setting, adding, or removing elements) affect the original.
+For sorted sets and maps, you specify a range by the lower and upper bound:
+Click here to view code image
+TreeSet<String> words = …;
+SortedSet<String> asOnly = words.subSet(“a”, “b”);
+As with subList, the first bound is inclusive, and the second exclusive.
+The headSet and tailSet methods yield a subrange with no lower or upper bound.
+Click here to view code image
+NavigableSet<String> nAndBeyond = words.tailSet(“n”);
+With the NavigableSet interface, you can choose for each bound whether it should be
+inclusive or exclusive—see Table 7–5.
+For a sorted map, there are equivalent methods subMap, headMap, and tailMap.
+7.6.2 Empty and Singleton Views
+The Collections class has static methods yielding an immutable empty list, set, sorted
+set, navigable set, map, sorted map, navigable map, iterator, list iterator, or enumeration
+(an iterator-like legacy interface from Java 1.0).
+Similarly, there are static methods yielding a set or list with a single element, and a map
+with a single key/value pair. These methods are shown in Table 7–3.
+For example, if a method requires a map of attributes, and you have none or only one to
+supply, you can call
+Click here to view code image
+doWork(Collections.emptyMap());
+or
+Click here to view code image
+doWork(Collections.singletonMap(“id”, id));
+instead of creating a heavyweight HashMap or TreeMap object.
+7.6.3 Unmodifiable Views
+Sometimes, you want to share the contents of a collection but you don’t want it to be
+modified. Of course, you could copy the values into a new collection, but that is
+potentially expensive. An unmodifiable view is a better choice. Here is a typical situation.
+A Person object maintains a list of friends. If the getFriends gave out a reference to
+that list, a caller could mutate it. But it is safe to provide an unmodifiable list view:
+Click here to view code image
+public class Person {
+private ArrayList<Person> friends;
+public List<Person> getFriends() {
+return Collections.unmodifiableList(friends);
+}
+…
+}
+All mutator methods throw an exception when they are invoked on an unmodifiable view.
+As you can see from Table 7–3, you can get unmodifiable views as collections, lists, sets,
+sorted sets, navigable sets, maps, sorted maps, and navigable maps.
+Note
+In Chapter 6, you saw how it is possible to smuggle the wrong kind of elements into
+a generic collection (a phenomenon called “heap pollution”), and that a runtime
+error is reported when the inappropriate element is retrieved, not when it is inserted.
+If you need to debug such a problem, use a checked view. Where you constructed,
+say, an ArrayList<String>, instead use
+Click here to view code image
+List<String> strings
+= Collections.checkedList(new ArrayList<>(), String.class);
+The view monitors all insertions into the list and throws an exception when an
+object of the wrong type is added.
+Note
+The Collections class produces synchronized views that ensure safe concurrent
+access to data structures. In practice, these views are not as useful as the data
+structures in the java.util.concurrent package that were explicitly
+designed for concurrent access. I suggest you use those classes and stay away from
+synchronized views
