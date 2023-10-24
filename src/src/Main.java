@@ -1,5 +1,7 @@
+import ch08.e17.E17;
+
 public class Main {
     public static void main(String[] args) {
-        ch07.e18.E18.run();
+        E17.run();
     }
 }
