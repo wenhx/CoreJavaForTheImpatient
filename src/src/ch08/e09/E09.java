@@ -8,7 +8,7 @@ import java.util.stream.Stream;
 
 public class E09 {
     public static void run() {
-        String filePath = "src\\ch08\\e07\\chapter8.txt";
+        String filePath = "src\\ch08\\e07\\chapter9.txt";
         File file = new File(filePath);
         try {
             Scanner scanner = new Scanner(file);
